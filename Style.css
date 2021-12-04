@@ -1,0 +1,12 @@
+body {
+  background-color: black;
+}
+
+#board {
+  position:relative;
+  height:863px;
+  width:1080px;
+  margin:auto;
+  background: url("Assets/board.jpg") no-repeat;
+}
+

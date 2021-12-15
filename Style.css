@@ -4,9 +4,15 @@ body {
 
 #board {
   position:relative;
-  height:863px;
-  width:1080px;
-  margin:auto;
+  height: 863px;
+  width: 1080px;
+  margin: auto;
   background: url("Assets/board.jpg") no-repeat;
 }
 
+#messageArea {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  color: rgb(83, 175, 19);
+}

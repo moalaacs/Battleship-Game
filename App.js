@@ -56,6 +56,20 @@ var model = {
 };
 
 var controller = {
+  guesses: 0,
+  processGuess: function (guess) {
+    var location = this.parseGuess(guess);
+    if (location) {
+      this.guesses++;
+      var hit = model.fire(location);
+    }
+    if (hit && model.shipsSunk === model.numShips) {
+      view.displayMessage(
+        "You sank all my battleships, in " + this.guesses + " guesses"
+      );
+    }
+  },
+
   parseGuess: function (guess) {
     var alphabet = ["A", "B", "C", "D", "E", "F", "G"];
     if (guess === null || guess.length !== 2) {

@@ -95,3 +95,27 @@ var controller = {
     return null;
   },
 };
+
+function init() {
+  var fireButton = document.getElementById("fireButton");
+  fireButton.onclick = handleFireButton;
+  var guessInput = document.getElementById("guessInput");
+  guessInput.onkeydown = handleKeyPress;
+}
+
+window.onload = init;
+
+function handleFireButton() {
+  var guessInput = document.getElementById("guessInput");
+  var guess = guessInput.value;
+  controller.processGuess(guess);
+  guessInput.value = "";
+}
+
+function handleKeyPress(e) {
+  var fireButton = document.getElementById("fireButton");
+  if (e.code === "Enter" || e.code === "Space") {
+    fireButton.click();
+    return false;
+  }
+}
